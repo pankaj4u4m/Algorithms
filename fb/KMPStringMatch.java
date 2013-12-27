@@ -15,11 +15,11 @@ public class KMPStringMatch {
 			System.out.print(i + " ");
 		}
 		int k = 0;
-		for (int i = 1; i < n; ++i) {
-			while ((k > 0) && (pattern.charAt(k + 1 - 1) != string.charAt(i - 1))) {
+		for (int i = 0; i < n; ++i) {
+			while ((k > 0) && (pattern.charAt(k ) != string.charAt(i))) {
 				k = prefix.get(k);
 			}
-			if (pattern.charAt(k + 1 - 1) == string.charAt(i - 1)) {
+			if (pattern.charAt(k ) == string.charAt(i)) {
 				k += 1;
 			}
 			if (k == m) {
@@ -38,11 +38,11 @@ public class KMPStringMatch {
 		int k = 0;
 		System.out.println(pattern.replaceAll("", " "));
 
-		for (int i = 2; i <= n; ++i) {
-			while ((k > 0) && (pattern.charAt(k + 1 - 1) != pattern.charAt(i - 1))) {
+		for (int i = 1; i < n; ++i) {
+			while ((k > 0) && (pattern.charAt(k) != pattern.charAt(i))) {
 				k = prefix.get(k);
 			}
-			if (pattern.charAt(k + 1 - 1) == pattern.charAt(i - 1)) {
+			if (pattern.charAt(k) == pattern.charAt(i)) {
 				k = k + 1;
 			}
 
